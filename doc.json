@@ -1,0 +1,36 @@
+{
+	"levels":[
+		{
+			"name":"Dirt",
+			"style":"2D Block Mining Game"
+		},
+		{
+			"name":"Sea",
+			"style":"Weeds Water"
+		},
+		{
+			"name":"Ice Cave",
+			"style":"**UNKNOWN**"
+		},
+		{
+			"name":"Pirate Ship",
+			"style":"Hyper Realism"
+		},
+		{
+			"name":"Sky",
+			"style":"**UNKNOWN**"
+		},
+		{
+			"name":"Sunset",
+			"style":"Minimalism"
+		},
+		{
+			"name":"Space",
+			"style":"Retro"
+		},
+		{
+			"name":"Space Sttion",
+			"style":"**UNKNOWN**"
+		}
+	]
+}
