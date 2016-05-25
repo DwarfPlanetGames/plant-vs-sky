@@ -9,7 +9,7 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 
 public class MyGdxGame  extends Game {
 
-	public static final int WIDTH = 16, HEIGHT = 16;
+	public static final int WIDTH = 8, HEIGHT = 8;
 	public static float cameraZoom = 1;
 	public static OrthographicCamera camera;
 
@@ -81,7 +81,7 @@ public class MyGdxGame  extends Game {
 
 	public static void setTheScreen(Screen screen) {
 		((Game) Gdx.app.getApplicationListener()).setScreen(screen);
-
+        setCameraLocation(0,0);
 	}
 
 	public static float getX(Camera camera) {
