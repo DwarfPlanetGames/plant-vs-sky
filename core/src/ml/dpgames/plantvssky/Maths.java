@@ -1,5 +1,9 @@
 package ml.dpgames.plantvssky;
 
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 
 /**
@@ -41,6 +45,14 @@ public class Maths {
 
     public static float lerp(float v0, float v1, float t, float dt) {
         return lerp(v0, v1, 1 - (float) Math.pow(t, dt));
+    }
+
+    public static void draw(SpriteBatch batch, TextureRegion tex, Rectangle r) {
+        batch.draw(tex, r.x, r.y, r.width, r.height);
+    }
+
+    public static void draw(SpriteBatch batch, Texture tex, Rectangle r) {
+        batch.draw(tex, r.x, r.y, r.width, r.height);
     }
 
 }

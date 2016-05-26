@@ -1,7 +1,9 @@
 package ml.dpgames.plantvssky;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
 
@@ -11,6 +13,9 @@ import com.badlogic.gdx.math.Rectangle;
 public class ScreenTitle implements Screen {
 
     private SpriteBatch batch;
+
+    private static final Texture texPlay = new Texture("sunset.png");
+    private static final Texture texCredits = new Texture("planet.png");
 
     @Override
     public void show() {
@@ -22,25 +27,28 @@ public class ScreenTitle implements Screen {
         OrthographicCamera camera = MyGdxGame.camera;
         batch.setProjectionMatrix(camera.combined);
 
-        Rectangle rectPlay = new Rectangle(-1, 0, 2, 1);
-        Rectangle rectCredits = new Rectangle(-1, -1, 2, 1);
+        Rectangle rectPlay = new Rectangle(-1, -1, 2, 1);
+        Rectangle rectCredits = new Rectangle(-1, -3, 2, 1);
 
-        float inputX = MyGdxGame.getX(camera);
-        float inputY = MyGdxGame.getY(camera);
+        if (Gdx.input.justTouched()) {
+            float inputX = MyGdxGame.getX(camera);
+            float inputY = MyGdxGame.getY(camera);
 
-        if (rectPlay.contains(inputX, inputY)) {
-            System.out.println("GOTO LEVEL SELECTION SCREEN");
-            // TODO: Create game screen
-        }
+            if (rectPlay.contains(inputX, inputY)) {
+                System.out.println("GOTO LEVEL SELECTION SCREEN");
+                // TODO: Create game screen
+            }
 
-        if (rectCredits.contains(inputX, inputY)) {
-            System.out.println("GOTO CREDITS SCREEN");
-            // TODO: Create credits screen
+            if (rectCredits.contains(inputX, inputY)) {
+                System.out.println("GOTO CREDITS SCREEN");
+                // TODO: Create credits screen
+            }
         }
 
         batch.begin();
         {
-
+            Maths.draw(batch,texPlay,rectPlay);
+            Maths.draw(batch,texCredits,rectCredits);
         }
         batch.end();
     }
