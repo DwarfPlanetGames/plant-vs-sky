@@ -14,8 +14,8 @@ public class ScreenTitle implements Screen {
 
     private SpriteBatch batch;
 
-    private static final Texture texPlay = new Texture("sunset.png");
-    private static final Texture texCredits = new Texture("planet.png");
+    public static final Texture texPlay = new Texture("sunset.png");
+    public static final Texture texCredits = new Texture("planet.png");
 
     @Override
     public void show() {
@@ -35,8 +35,7 @@ public class ScreenTitle implements Screen {
             float inputY = MyGdxGame.getY(camera);
 
             if (rectPlay.contains(inputX, inputY)) {
-                System.out.println("GOTO LEVEL SELECTION SCREEN");
-                // TODO: Create game screen
+                MyGdxGame.setTheScreen(new ScreenLevelSelect());
             }
 
             if (rectCredits.contains(inputX, inputY)) {
@@ -47,8 +46,8 @@ public class ScreenTitle implements Screen {
 
         batch.begin();
         {
-            Maths.draw(batch,texPlay,rectPlay);
-            Maths.draw(batch,texCredits,rectCredits);
+            Maths.draw(batch, texPlay, rectPlay);
+            Maths.draw(batch, texCredits, rectCredits);
         }
         batch.end();
     }

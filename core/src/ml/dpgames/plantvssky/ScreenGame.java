@@ -28,6 +28,9 @@ public class ScreenGame implements Screen {
         if (!level.isComplete()) {
             level.render(batch, delta);
         } else {
+            if (ScreenLevelSelect.level < level.getId()) {
+                ScreenLevelSelect.level = level.getId();
+            }
             MyGdxGame.setTheScreen(new ScreenLevelSelect());
         }
     }

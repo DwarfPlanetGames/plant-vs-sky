@@ -10,5 +10,6 @@ public interface Level {
     void render(SpriteBatch batch, float delta);
     float getProgress();
     boolean isComplete();
+    int getId();
 
 }
