@@ -120,9 +120,9 @@ public class LevelDirt implements Level {
         int center = (int) Maths.clamp(last.center + random.nextInt(3) - 1, room + 1, blocks.length - room - 1);
         for (int i = 0; i < blocks.length; i++) {
             if (i < center - room || i > center + room) {
-                blocks[i] = (last.blocks[i] && random.nextInt(6) != 0) || random.nextInt(6) == 0;
+                blocks[i] = (last.blocks[i] && random.nextInt(2) != 0) || random.nextInt(2) != 0;
                 if (i > 0 && blocks[i - 1])
-                    blocks[i] = random.nextBoolean();
+                    blocks[i] |= random.nextBoolean();
             }
         }
         return new Layer(blocks, center);
